@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estandarización de Handoffs UX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1f2937;
+            background-color: #f3f4f6;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 {
+            color: #111827;
+        }
+        .section-counter::before {
+            counter-increment: section;
+            content: counter(section) ". ";
+            color: #4f46e5;
+            font-weight: 700;
+        }
+        body {
+            counter-reset: section;
+        }
+        h2.numbered::before {
+            counter-increment: section;
+            content: counter(section) ". ";
+            color: #4f46e5; /* Indigo 600 */
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden border border-gray-100">
+        
+        <!-- Header / Cover -->
+        <header class="bg-indigo-600 text-white p-10 md:p-16 text-center relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+            <div class="relative z-10">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Estandarización de Handoffs UX</h1>
+                <p class="text-xl md:text-2xl text-indigo-100 font-light">Versión 1.0 – Propuesta de Estándar Unificado</p>
+                <div class="mt-6 flex justify-center space-x-4 text-sm font-medium text-indigo-200">
+                    <span>UX</span>
+                    <span>&bull;</span>
+                    <span>Ingeniería</span>
+                    <span>&bull;</span>
+                    <span>Producto</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="p-8 md:p-16 space-y-12">
+
+            <!-- 1. Introducción -->
+            <section>
+                <h2 class="text-2xl font-bold mb-4 numbered">Introducción General</h2>
+                <div class="prose max-w-none text-gray-600">
+                    <p class="mb-4 text-lg leading-relaxed">
+                        El handoff es el puente que traduce un diseño en un producto real. Hoy cada squad maneja este proceso de manera distinta, generando inconsistencias, pérdida de tiempo, fricción con Ingeniería y dificultades para escalar.
+                    </p>
+                    <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-indigo-500">
+                        <p class="font-semibold text-gray-800 mb-2">Este documento concentra:</p>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg> La problemática actual</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg> La oportunidad de mejora</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg> Marco teórico</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg> Propuesta estructural clara</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg> Proceso unificado</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg> Requerimientos de Ingeniería</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Problemática vs 3. Oportunidades -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Problemática -->
+                <section class="bg-red-50 p-6 rounded-xl border border-red-100">
+                    <h2 class="text-xl font-bold mb-4 text-red-800 flex items-center">
+                        <span class="mr-2">2.</span> Problemática Actual
+                    </h2>
+                    <ul class="space-y-3 text-red-900 text-sm">
+                        <li class="flex items-start"><span class="mr-2 text-red-400 mt-1">⚠</span> Inconsistencias entre squads y tribus.</li>
+                        <li class="flex items-start"><span class="mr-2 text-red-400 mt-1">⚠</span> Dificultad de lectura para externos.</li>
+                        <li class="flex items-start"><span class="mr-2 text-red-400 mt-1">⚠</span> Falta de organización y nomenclatura clara.</li>
+                        <li class="flex items-start"><span class="mr-2 text-red-400 mt-1">⚠</span> Versiones dispersas (sin fuente de verdad).</li>
+                        <li class="flex items-start"><span class="mr-2 text-red-400 mt-1">⚠</span> Falta de claridad para Ingeniería.</li>
+                        <li class="flex items-start"><span class="mr-2 text-red-400 mt-1">⚠</span> Procesos duplicados en Ditto.</li>
+                    </ul>
+                </section>
+
+                <!-- Oportunidades -->
+                <section class="bg-emerald-50 p-6 rounded-xl border border-emerald-100">
+                    <h2 class="text-xl font-bold mb-4 text-emerald-800 flex items-center">
+                        <span class="mr-2">3.</span> Oportunidades
+                    </h2>
+                    <ul class="space-y-3 text-emerald-900 text-sm">
+                        <li class="flex items-start"><span class="mr-2 text-emerald-500 mt-1">✓</span> Estructura de archivo unificada.</li>
+                        <li class="flex items-start"><span class="mr-2 text-emerald-500 mt-1">✓</span> Nomenclatura para búsqueda fácil.</li>
+                        <li class="flex items-start"><span class="mr-2 text-emerald-500 mt-1">✓</span> Fuente de verdad única.</li>
+                        <li class="flex items-start"><span class="mr-2 text-emerald-500 mt-1">✓</span> Estandarización del proceso.</li>
+                        <li class="flex items-start"><span class="mr-2 text-emerald-500 mt-1">✓</span> Menor carga cognitiva para Ingeniería.</li>
+                        <li class="flex items-start"><span class="mr-2 text-emerald-500 mt-1">✓</span> Integración mejorada con Ditto.</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- 4. Objetivos -->
+            <section>
+                <h2 class="text-2xl font-bold mb-6 numbered">Objetivos del Nuevo Estándar</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="border border-gray-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+                        <h3 class="font-bold text-gray-800 mb-3 border-b pb-2">Negocio / Equipo</h3>
+                        <ul class="space-y-2 text-sm text-gray-600 list-disc list-inside">
+                            <li>Alinear información de entrega con Ingeniería.</li>
+                            <li>Definir estructura escalable.</li>
+                            <li>Proceso consistente de versionado.</li>
+                            <li>Nomenclatura común.</li>
+                            <li>Planificar prueba piloto.</li>
+                        </ul>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+                        <h3 class="font-bold text-gray-800 mb-3 border-b pb-2">Operativos</h3>
+                        <ul class="space-y-2 text-sm text-gray-600 list-disc list-inside">
+                            <li>Reducir fricción en desarrollo.</li>
+                            <li>Aumentar claridad de diseños.</li>
+                            <li>Evitar duplicación.</li>
+                            <li>Acceso rápido a key assets.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Marco Teórico -->
+            <section class="bg-gray-800 text-gray-100 rounded-xl p-8 shadow-inner">
+                <h2 class="text-2xl font-bold mb-4 flex items-center text-white">
+                    <span class="bg-gray-700 text-xs px-2 py-1 rounded mr-3 text-gray-300">SECCIÓN 5</span>
+                    Marco Teórico – ¿Qué es un HO?
+                </h2>
+                <p class="mb-6 text-gray-300 italic">
+                    "Un HO es el proceso formal en el que UX transfiere un diseño completamente especificado al equipo de Ingeniería, garantizando que el producto final sea fiel a la experiencia diseñada."
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8 text-sm">
+                    <div>
+                        <h4 class="font-semibold text-indigo-400 uppercase tracking-wider mb-2 text-xs">Información que DEBE incluir</h4>
+                        <ul class="space-y-1 text-gray-400">
+                            <li>• Pantallas / flujos finales</li>
+                            <li>• Fecha última actualización</li>
+                            <li>• Assets visuales, colores, typos</li>
+                            <li>• User flows y estados interactivos</li>
+                            <li>• Microinteracciones y animaciones</li>
+                            <li>• Casos de uso y accesibilidad</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-red-400 uppercase tracking-wider mb-2 text-xs">Información que NO debe incluir</h4>
+                        <ul class="space-y-1 text-gray-400">
+                            <li>• Racionales extensos</li>
+                            <li>• Exploraciones</li>
+                            <li>• Propuestas descartadas</li>
+                            <li>• Pantallas no finales</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Temas a Resolver -->
+            <section>
+                <h2 class="text-2xl font-bold mb-6 numbered">Temas a Resolver (Base del Nuevo Estándar)</h2>
+                <div class="space-y-4">
+                    <details class="group bg-white border border-gray-200 rounded-lg open:shadow-md transition-all">
+                        <summary class="flex justify-between items-center p-4 cursor-pointer font-medium text-gray-800 list-none">
+                            <span>6.1 Estructura de Archivos</span>
+                            <span class="transition group-open:rotate-180">
+                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                            </span>
+                        </summary>
+                        <div class="text-gray-600 px-4 pb-4 text-sm">
+                            Definir la estructura mínima, diferenciar entre básica y full, y qué queda fuera del archivo final.
+                        </div>
+                    </details>
+                    
+                    <details class="group bg-white border border-gray-200 rounded-lg open:shadow-md transition-all">
+                        <summary class="flex justify-between items-center p-4 cursor-pointer font-medium text-gray-800 list-none">
+                            <span>6.2 Guía de Lectura</span>
+                            <span class="transition group-open:rotate-180">
+                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                            </span>
+                        </summary>
+                        <div class="text-gray-600 px-4 pb-4 text-sm">
+                            <p class="mb-2">Cada archivo debe iniciar con una cover y una guía:</p>
+                            <ul class="list-disc list-inside grid grid-cols-2 gap-1">
+                                <li>Intro / Contexto</li><li>Flow general</li><li>Pantallas / componentes</li><li>Casos de uso</li>
+                                <li>Spacings / Specs</li><li>Skeletons</li><li>Motion</li><li>Contenido (Ditto)</li>
+                                <li>Notas comportamiento</li><li>Accesibilidad</li><li>QA y registro cambios</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white border border-gray-200 rounded-lg open:shadow-md transition-all">
+                        <summary class="flex justify-between items-center p-4 cursor-pointer font-medium text-gray-800 list-none">
+                            <span>6.3 Archivo de Proceso vs HO & 6.4 Motion</span>
+                            <span class="transition group-open:rotate-180">
+                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                            </span>
+                        </summary>
+                        <div class="text-gray-600 px-4 pb-4 text-sm">
+                            <p><strong>Proceso vs HO:</strong> Archivo de Proceso = exploración. HO = definiciones finales.</p>
+                            <p class="mt-2"><strong>Motion:</strong> Debe tener prototipo interactivo y 3 frames clave (inicio / medio / final).</p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <!-- 7. Requerimientos Ingeniería -->
+            <section>
+                <h2 class="text-2xl font-bold mb-6 numbered">Requerimientos de Ingeniería (Insights)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Card 1 -->
+                    <div class="bg-blue-50 p-5 rounded-lg">
+                        <h3 class="font-bold text-blue-900 mb-2">Flujo y Contexto</h3>
+                        <p class="text-sm text-blue-800">Ver flow completo. Entender BDUI vs no-BDUI. Separación pantallas/casos de uso. Prototipos de transición.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-purple-50 p-5 rounded-lg">
+                        <h3 class="font-bold text-purple-900 mb-2">Contenido (Ditto)</h3>
+                        <p class="text-sm text-purple-800">ID de proyecto visible. Distinguir variables vs fijo. Un proyecto Ditto por servicio/pantalla.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-amber-50 p-5 rounded-lg">
+                        <h3 class="font-bold text-amber-900 mb-2">Especificaciones</h3>
+                        <p class="text-sm text-amber-800">"Before & After" (qué cambió). Spacings consistentes (px para BDUI). Nomenclatura coherente. Un solo frame.</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="bg-teal-50 p-5 rounded-lg">
+                        <h3 class="font-bold text-teal-900 mb-2">Herramientas</h3>
+                        <p class="text-sm text-teal-800">Links directos a componentes. Documentación Figma. Prefieren Slack y notas en archivo sobre comments.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Nueva Estructura Estándar -->
+            <section>
+                <h2 class="text-2xl font-bold mb-6 numbered">Nueva Estructura Estándar</h2>
+                <div class="border-l-4 border-indigo-500 pl-6 py-2 space-y-6">
+                    
+                    <div>
+                        <h4 class="font-bold text-lg text-gray-800">1. Cover</h4>
+                        <p class="text-gray-500 text-sm">Nombre del proyecto, Fecha, Referentes</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-lg text-gray-800">2. Intro</h4>
+                        <p class="text-gray-500 text-sm">Contexto breve, Objetivo, Alcance</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-lg text-gray-800">3. Flow (si aplica)</h4>
+                        <p class="text-gray-500 text-sm">Recorrido general, Identificación BDUI / no-BDUI</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-lg text-gray-800">4. Master Specs</h4>
+                        <p class="text-gray-500 text-sm">Pantallas finales, Casos de uso (inicial/medio/final), Spacings, Skeletons, Motion, Accesibilidad, Before & After, Notas comportamiento</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-lg text-gray-800">5. Ditto</h4>
+                        <p class="text-gray-500 text-sm">ID visible, Keys finales</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-lg text-gray-800">6. QA & Versionado</h4>
+                        <p class="text-gray-500 text-sm">Changelog, Observaciones implementación, Registro revisiones</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. Nomenclatura -->
+            <section class="bg-gray-900 text-white p-8 rounded-xl">
+                <h2 class="text-xl font-bold mb-4 text-white"><span class="text-indigo-400">9.</span> Nomenclatura</h2>
+                <p class="mb-4 text-gray-400 text-sm">Formato sugerido para permitir búsqueda rápida y escalabilidad:</p>
+                
+                <div class="bg-black rounded-lg p-4 font-mono text-sm space-y-2 overflow-x-auto">
+                    <div class="flex items-center">
+                        <span class="text-pink-500 mr-2">👉</span>
+                        <span class="text-green-400">TRIBU_Proyecto_HO_v01</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-pink-500 mr-2">👉</span>
+                        <span class="text-green-400">TRIBU_Proyecto_Proceso_v01</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-pink-500 mr-2">👉</span>
+                        <span class="text-green-400">TRIBU_Proyecto_Ditto_v01</span>
+                    </div>
+                </div>
+                <p class="mt-4 text-xs text-gray-500">Ejemplo: <span class="text-gray-300">FOOD_Checkout_HO_v03</span></p>
+            </section>
+
+            <!-- 10. Versionado y 11. Consumo -->
+            <section class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="text-xl font-bold mb-4 numbered">Control de Versiones</h2>
+                    <ul class="space-y-4">
+                        <li class="bg-white p-3 rounded shadow-sm border border-gray-100">
+                            <strong class="block text-indigo-600">Cambios significativos</strong>
+                            <span class="text-sm text-gray-600">Se crea un nuevo archivo.</span>
+                        </li>
+                        <li class="bg-white p-3 rounded shadow-sm border border-gray-100">
+                            <strong class="block text-indigo-600">Cambios menores</strong>
+                            <span class="text-sm text-gray-600">Se mantiene en el mismo archivo, registrar en QA.</span>
+                        </li>
+                        <li class="bg-white p-3 rounded shadow-sm border border-gray-100">
+                            <strong class="block text-indigo-600">Implementación por etapas</strong>
+                            <span class="text-sm text-gray-600">Todas las especificaciones en una sola página, secciones delimitadas.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold mb-4 numbered">Consumo (Ingeniería)</h2>
+                    <p class="text-sm text-gray-600 mb-4">El nuevo estándar soluciona los principales dolores actuales:</p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Falta de contexto</li>
+                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Flujos incompletos</li>
+                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Spacings inconsistentes</li>
+                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Confusión con librería</li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr class="border-gray-200">
+
+            <!-- 12, 13, 14 Final Sections -->
+            <section class="grid md:grid-cols-3 gap-6">
+                <!-- Diseño + Contenido -->
+                <article>
+                    <h3 class="font-bold text-gray-800 mb-3 text-lg flex items-center">
+                        <span class="bg-gray-200 text-gray-700 rounded-full w-6 h-6 flex items-center justify-center text-xs mr-2">12</span>
+                        Diseño + Contenido
+                    </h3>
+                    <p class="text-xs text-gray-500 mb-2">Objetivo: Facilitar vida a ingeniería.</p>
+                    <ul class="text-sm text-gray-600 list-disc list-inside">
+                        <li>Anotaciones claras (variables vs fijo).</li>
+                        <li>IDs visibles y consistentes.</li>
+                        <li>Documentar dependencias Backend/BDUI.</li>
+                        <li>Simetría Ditto-Figma.</li>
+                    </ul>
+                </article>
+
+                <!-- Recursos -->
+                <article>
+                    <h3 class="font-bold text-gray-800 mb-3 text-lg flex items-center">
+                        <span class="bg-gray-200 text-gray-700 rounded-full w-6 h-6 flex items-center justify-center text-xs mr-2">13</span>
+                        Recursos Necesarios
+                    </h3>
+                    <ul class="text-sm text-gray-600 list-disc list-inside">
+                        <li>Librería components utilities.</li>
+                        <li>Plantilla de frames estándar.</li>
+                        <li>Template de flujo.</li>
+                        <li>Biblioteca anotaciones motion.</li>
+                        <li>Template Before & After.</li>
+                    </ul>
+                </article>
+
+                <!-- Próximos Pasos -->
+                <article>
+                    <h3 class="font-bold text-gray-800 mb-3 text-lg flex items-center">
+                        <span class="bg-gray-200 text-gray-700 rounded-full w-6 h-6 flex items-center justify-center text-xs mr-2">14</span>
+                        Próximos Pasos
+                    </h3>
+                    <ol class="text-sm text-gray-600 list-decimal list-inside space-y-1">
+                        <li>Validar estructura (Front + Back).</li>
+                        <li>Ajustar plantillas.</li>
+                        <li>Elegir proyecto piloto.</li>
+                        <li>Testear (Kickoff → Handoff).</li>
+                        <li>Medir y ajustar.</li>
+                    </ol>
+                </article>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-50 p-8 text-center text-gray-400 text-sm border-t border-gray-200">
+            <p>Propuesta de Estandarización de Handoffs UX &copy; 2024</p>
+            <p class="mt-2">Anexos Visuales disponibles en el roadmap adjunto.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
